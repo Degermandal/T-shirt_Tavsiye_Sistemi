@@ -1,0 +1,17 @@
+{
+  "arch": "x86_64", 
+  "build": "py36_cuda9.0.176_1", 
+  "build_number": 1, 
+  "depends": [
+    "mkl", 
+    "numpy >=1.11", 
+    "python >=3.6,<3.7.0a0"
+  ], 
+  "license": "BSD 3-Clause", 
+  "license_family": "BSD", 
+  "name": "faiss-gpu", 
+  "platform": "linux", 
+  "subdir": "linux-64", 
+  "timestamp": 1522875380330, 
+  "version": "1.2.1"
+}

@@ -1,0 +1,59 @@
+# This file created by conda-build 3.7.1
+# meta.yaml template originally from:
+# /remote/faiss-gpu, last modified Sun Apr  1 18:01:17 2018
+# ------------------------------------------------
+
+package:
+    name: faiss-gpu
+    version: 1.2.1
+source:
+    path: /remote/faiss-src
+build:
+    number: '1'
+    string: py36_cuda9.0.176_1
+requirements:
+    build:
+        - ca-certificates 2018.03.07 0
+        - intel-openmp 2018.0.0 8
+        - libgcc-ng 7.2.0 hdf63c60_3
+        - libgfortran-ng 7.2.0 hdf63c60_3
+        - libstdcxx-ng 7.2.0 hdf63c60_3
+        - libffi 3.2.1 hd88cf55_4
+        - mkl 2018.0.2 1
+        - ncurses 6.0 h9df7e31_2
+        - openssl 1.0.2o h20670df_0
+        - pcre 8.41 hc27e229_1
+        - tk 8.6.7 hc745277_3
+        - xz 5.2.3 h55aa19d_2
+        - zlib 1.2.11 ha838bed_2
+        - libedit 3.1 heed3624_0
+        - readline 7.0 ha6073c6_4
+        - swig 3.0.12 h38cdd7d_3
+        - sqlite 3.22.0 h1bed415_0
+        - python 3.6.5 hc3d631a_0
+        - certifi 2018.1.18 py36_0
+        - numpy 1.11.3 py36h3dfced4_4
+        - setuptools 39.0.1 py36_0
+        - wheel 0.31.0 py36_0
+        - pip 9.0.3 py36_0
+    run:
+        - python >=3.6,<3.7.0a0
+        - mkl
+        - numpy >=1.11
+test:
+    commands:
+        - python tests/test_index.py
+        - python tests/test_index_composite.py
+    imports:
+        - faiss
+    source_files:
+        - tests
+about:
+    home: https://github.com/facebookresearch/faiss
+    license: BSD 3-Clause
+    license_family: BSD
+    license_file: LICENSE
+    summary: A library for efficient similarity search and clustering of dense vectors.
+extra:
+    copy_test_source_files: true
+    final: true
